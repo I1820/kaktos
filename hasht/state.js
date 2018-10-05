@@ -35,7 +35,7 @@ class HashtState {
         this.states.push({
           name: HashtState.getStateName(stateResult[1]),
           id: stateResult[2],
-          value: stateResult[3]
+          value: parseInt(stateResult[3]) // values are integer
         })
       })
       console.log(this.nodeId, this.battery, this.states)
