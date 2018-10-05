@@ -17,6 +17,9 @@ const client = new i1820.I1820Client('mqtt://192.168.73.5', '5baefba101ebbdb4df4
 client.on('ready', () => {
   console.log('We are good to go')
 })
+client.on('log', () => {
+  console.log('Send data to server')
+})
 
 const nrf = new SerialPort('/dev/ttyUSB0', {
   baudRate: 115200
