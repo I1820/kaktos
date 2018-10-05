@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/Nahalco/Kaktos#readme",
   "dependencies": {
-    "@i1820/hub": "^1.1.0",
+    "@i1820/hub": "^1.2.0",
     "serialport": "^7.0.2"
   },
   "devDependencies": {
