@@ -37,7 +37,7 @@ rl.on('line', (input) => {
 
   let hs = new HashtState(input.toString())
 
-  if (hs) {
+  if (hs && hs.states) {
     let data = {}
     data[hs.states[0].name] = hs.states[0].value
     data[hs.states[1].name] = hs.states[1].value
