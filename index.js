@@ -9,16 +9,14 @@
  */
 const SerialPort = require('serialport')
 const readline = require('readline')
-const bamboo = require('@ibamboo/rpi.js')
+const i1820 = require('@i1820/hub')
 
 const HashtState = require('./hasht/state')
 
-const client = new bamboo.BambooClient('mqtt://192.168.73.8', 'parham_home', 'Rooman')
+const client = new i1820.I1820Client('mqtt://192.168.73.5', '5baefba101ebbdb4df4a6d73', '1Aroyu8Ec7PnnPz4Yz09XYVLchE')
 client.on('ready', () => {
-  console.log(client.hash)
+  console.log('We are good to go')
 })
-
-const m7 = client.addThing('7', 'multisensor')
 
 const nrf = new SerialPort('/dev/ttyUSB0', {
   baudRate: 115200
@@ -43,6 +41,6 @@ rl.on('line', (input) => {
     data[hs.states[2].name] = hs.states[2].value
     data[hs.states[3].name] = hs.states[3].value
 
-    m7.log(data)
+    client.log(data)
   }
 })
