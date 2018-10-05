@@ -1,10 +1,10 @@
 {
   "name": "kaktos",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Nahal Corporation Bamboo Agent",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "eslint --color **/*.js"
   },
   "repository": {
     "type": "git",
