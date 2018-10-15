@@ -13,7 +13,8 @@ const i1820 = require('@i1820/hub')
 
 const HashtState = require('./hasht/state')
 
-const client = new i1820.I1820Client('mqtt://192.168.73.5', '5baefba101ebbdb4df4a6d73', '1Aroyu8Ec7PnnPz4Yz09XYVLchE')
+// broker-ip thing-id access-token
+const client = new i1820.I1820Client('mqtt://192.168.1.81', '5bbf3c34455ab076582c5348', '1BQdq0BbpchLtTp9ZKPakx3mhgL')
 client.on('ready', () => {
   console.log('We are good to go')
 })
