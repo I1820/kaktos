@@ -14,13 +14,18 @@ const i1820 = require('@i1820/hub')
 const HashtState = require('./hasht/state')
 
 // broker-ip thing-id access-token
-const client = new i1820.I1820Client('mqtt://192.168.1.81', '5bbf3c34455ab076582c5348', '1BQdq0BbpchLtTp9ZKPakx3mhgL')
+const client = new i1820.I1820Client('mqtt://platform.i1820.org', '5c363a21dc0c7ec7b188a623', '1FXa3RDneTFH7eI6CJlTlbdrIKr')
 client.on('ready', () => {
   console.log('We are good to go')
 })
 
 const nrf = new SerialPort('/dev/ttyUSB0', {
   baudRate: 115200
+})
+
+nrf.on('error', (err) => {
+  console.log(`serial port failed with ${err}`)
+  process.exit(1)
 })
 
 const rl = readline.createInterface({
